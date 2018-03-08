@@ -51,6 +51,16 @@
                 "height": 72,
                 "label": "Display"
             }
+        },
+        "testt/testt_guemi": {
+            "component": "testt/testt",
+            "metadata": {
+                "label": "testt",
+                "x": -36,
+                "y": 180,
+                "width": 72,
+                "height": 72
+            }
         }
     },
     "connections": [
