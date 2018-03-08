@@ -1,0 +1,101 @@
+{
+    "caseSensitive": false,
+    "properties": {
+        "name": "main",
+        "environment": {
+            "type": "noflo-nodejs"
+        },
+        "description": "Error flow",
+        "icon": "cog"
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {
+        "Read": {
+            "component": "filesystem/ReadFile",
+            "metadata": {
+                "x": 72,
+                "y": 36,
+                "width": 72,
+                "height": 72,
+                "label": "Read"
+            }
+        },
+        "Display": {
+            "component": "core/Output",
+            "metadata": {
+                "x": 216,
+                "y": 0,
+                "width": 72,
+                "height": 72,
+                "label": "Display"
+            }
+        },
+        "filesystem/ReadFile_t7ump": {
+            "component": "filesystem/ReadFile",
+            "metadata": {
+                "x": 216,
+                "y": 144,
+                "width": 72,
+                "height": 72,
+                "label": "Read"
+            }
+        },
+        "core/Output_ckc39": {
+            "component": "core/Output",
+            "metadata": {
+                "x": 324,
+                "y": 144,
+                "width": 72,
+                "height": 72,
+                "label": "Display"
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "Read",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "Display",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 1,
+                "secure": false
+            }
+        },
+        {
+            "src": {
+                "process": "Read",
+                "port": "error"
+            },
+            "tgt": {
+                "process": "filesystem/ReadFile_t7ump",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "filesystem/ReadFile_t7ump",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "core/Output_ckc39",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "data": "package.json",
+            "tgt": {
+                "process": "Read",
+                "port": "in"
+            }
+        }
+    ]
+}
