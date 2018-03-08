@@ -15,7 +15,7 @@
         "Read": {
             "component": "filesystem/ReadFile",
             "metadata": {
-                "x": 72,
+                "x": 36,
                 "y": 36,
                 "width": 72,
                 "height": 72,
@@ -25,41 +25,11 @@
         "Display": {
             "component": "core/Output",
             "metadata": {
-                "x": 216,
-                "y": 0,
+                "x": 144,
+                "y": 36,
                 "width": 72,
                 "height": 72,
                 "label": "Display"
-            }
-        },
-        "filesystem/ReadFile_t7ump": {
-            "component": "filesystem/ReadFile",
-            "metadata": {
-                "x": 216,
-                "y": 144,
-                "width": 72,
-                "height": 72,
-                "label": "Read"
-            }
-        },
-        "core/Output_ckc39": {
-            "component": "core/Output",
-            "metadata": {
-                "x": 324,
-                "y": 144,
-                "width": 72,
-                "height": 72,
-                "label": "Display"
-            }
-        },
-        "testt/testt_guemi": {
-            "component": "testt/testt",
-            "metadata": {
-                "label": "testt",
-                "x": -36,
-                "y": 180,
-                "width": 72,
-                "height": 72
             }
         }
     },
@@ -77,28 +47,6 @@
                 "route": 1,
                 "secure": false
             }
-        },
-        {
-            "src": {
-                "process": "Read",
-                "port": "error"
-            },
-            "tgt": {
-                "process": "filesystem/ReadFile_t7ump",
-                "port": "in"
-            },
-            "metadata": {}
-        },
-        {
-            "src": {
-                "process": "filesystem/ReadFile_t7ump",
-                "port": "out"
-            },
-            "tgt": {
-                "process": "core/Output_ckc39",
-                "port": "in"
-            },
-            "metadata": {}
         },
         {
             "data": "package.json",
